@@ -14,4 +14,11 @@ class FibonacciTest(@Autowired private val fibonacci: Fibonacci) {
         val f = fibonacci.findFibonacci(randomN)
         print("n = $randomN, value n = $f")
     }
+
+    @Test
+    fun getLastFigureOfFibonacci() {
+        val randomN = (1..90).random()
+        val f = fibonacci.findLastFigureOfFibonacci(randomN)
+        print("n = $randomN, last figure of Fibonacci = $f")
+    }
 }

@@ -15,4 +15,21 @@ class Fibonacci {
         }
         return fibSequence[n - 1]!!
     }
+
+    fun findLastFigureOfFibonacci(n: Int): Int {
+        var previousF = 1
+        var doublePreviousF = 0
+        var currentF = 1
+        var i = 0
+        while (i != n - 1) {
+            currentF = previousF + doublePreviousF
+            if (currentF >= 10) {
+                currentF %= 10
+            }
+            doublePreviousF = previousF
+            previousF = currentF
+            i++
+        }
+        return currentF
+    }
 }
